@@ -287,7 +287,6 @@ const Certificates = () => {
               tags={cert.tags}
               link={cert.link}
               cardClass="flowing-border-simplilearn"
-              showTravelingFlower={true}
             />
           ))}
         </div>
