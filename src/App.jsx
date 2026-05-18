@@ -12,6 +12,37 @@ import Contact from './sections/Contact';
 import './App.css';
 
 function App() {
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = '/BADAM SUDHEER REDDY .jpeg.png';
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const size = 128; // High-res favicon size
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      
+      // Apply perfect circular crop mask
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.clip();
+      
+      // Draw the image
+      ctx.drawImage(img, 0, 0, size, size);
+      
+      // Update or create the tab favicon link dynamically
+      let link = document.querySelector("link[rel~='icon']");
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }
+      link.type = 'image/png';
+      link.href = canvas.toDataURL('image/png');
+    };
+  }, []);
+
   return (
     <div className="app-container">
       {/* Fixed Background Image */}
