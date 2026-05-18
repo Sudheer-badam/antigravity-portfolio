@@ -17,21 +17,7 @@ const Navbar = () => {
       zIndex: 1000,
       overflow: 'hidden' // Ensure leaves don't fall outside the navbar
     }}>
-      {/* Falling Leaves inside Navbar */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 0 }}>
-        {[...Array(12)].map((_, i) => (
-          <div key={i} className="falling-leaf" style={{ 
-            position: 'absolute',
-            left: `${Math.random() * 100}%`,
-            animation: `nav-fall ${3 + Math.random() * 4}s linear infinite, rainbow-hue ${2 + Math.random() * 2}s linear infinite`,
-            animationDelay: `${Math.random() * -10}s`, // Randomize start
-            fontSize: `${1 + Math.random() * 1}rem`,
-            opacity: 0.5 + Math.random() * 0.5
-          }}>
-            {['🍃', '🍂', '🍁', '🌿', '🌸'][Math.floor(Math.random() * 5)]}
-          </div>
-        ))}
-      </div>
+
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '15px', zIndex: 1 }}>
         <img
