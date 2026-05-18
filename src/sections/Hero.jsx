@@ -32,7 +32,8 @@ const Hero = () => {
             fontWeight: 800, 
             marginBottom: '1rem', 
             lineHeight: '1.1',
-            fontFamily: '"Lucida Calligraphy", cursive, serif'
+            fontFamily: '"Lucida Calligraphy", cursive, serif',
+            paddingRight: '20px'
           }}
         >
           Badam Sudheer Reddy
